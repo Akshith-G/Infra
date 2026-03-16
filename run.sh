@@ -45,15 +45,16 @@ aws ec2 run-instances \
 --count 1 \
 --instance-type $INSTANCE_TYPE \
 --user-data file://windows/windows1.ps1 \
---region $REGION
- 
+--region $REGION \
+--key-name mykey  
  
 aws ec2 run-instances \
 --image-id $WINDOWS_AMI \
 --count 1 \
 --instance-type $INSTANCE_TYPE \
 --user-data file://windows/windows2.ps1 \
---region $REGION
+--region $REGION \
+--key-name mykey 
  
  
 echo "Deployment completed"
